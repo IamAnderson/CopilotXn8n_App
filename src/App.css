@@ -42,6 +42,21 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
+/* Enhanced text wrapping for long content like EventIds */
+.message-text {
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  line-height: 1.4;
+}
+
+/* Ensure long URLs and IDs break properly */
+.message-text * {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 /* Responsive adjustments for narrow sidebars */
 @media (max-width: 400px) {
   .message-bubble {
@@ -54,5 +69,12 @@
   
   .chat-input-container {
     padding: 0.75rem 1rem;
+  }
+  
+  /* Enhanced text wrapping on mobile */
+  .message-text {
+    word-break: break-all;
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
 }

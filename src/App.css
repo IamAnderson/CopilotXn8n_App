@@ -1,0 +1,58 @@
+/* Chat Application Styles */
+
+/* Ensure full height for the chat container */
+#root {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar for messages */
+.messages-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 2px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Smooth animations for message appearance */
+.message-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.message-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+/* Focus styles for better accessibility */
+.chat-input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive adjustments for narrow sidebars */
+@media (max-width: 400px) {
+  .message-bubble {
+    max-width: calc(100vw - 80px);
+  }
+  
+  .chat-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .chat-input-container {
+    padding: 0.75rem 1rem;
+  }
+}

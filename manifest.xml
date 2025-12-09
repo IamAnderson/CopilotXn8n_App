@@ -13,8 +13,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Calendar Assistant"/>
   <Description DefaultValue="AI-powered calendar management chatbot"/>
-  <IconUrl DefaultValue="https://via.placeholder.com/64/4A90E2/ffffff?text=CA"/>
-  <HighResolutionIconUrl DefaultValue="https://via.placeholder.com/128/4A90E2/ffffff?text=CA"/>
+  <IconUrl DefaultValue="https://img.icons8.com/color/64/calendar--v1.png"/>
+  <HighResolutionIconUrl DefaultValue="https://img.icons8.com/color/128/calendar--v1.png"/>
   <SupportUrl DefaultValue="https://www.contoso.com/support"/>
   
   <!-- PERMISSIONS -->
@@ -35,7 +35,6 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <!-- REPLACE THIS WITH YOUR REACT APP URL -->
         <SourceLocation DefaultValue="https://copilot-xn8n-app.vercel.app"/>
         <RequestedHeight>450</RequestedHeight>
       </DesktopSettings>
@@ -77,12 +76,11 @@
     <!-- RESOURCES -->
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://via.placeholder.com/16/4A90E2/ffffff?text=C"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://via.placeholder.com/32/4A90E2/ffffff?text=C"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://via.placeholder.com/80/4A90E2/ffffff?text=CA"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://img.icons8.com/color/16/calendar--v1.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://img.icons8.com/color/32/calendar--v1.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://img.icons8.com/color/80/calendar--v1.png"/>
       </bt:Images>
       <bt:Urls>
-        <!-- REPLACE THIS WITH YOUR REACT APP URL -->
         <bt:Url id="Taskpane.Url" DefaultValue="https://copilot-xn8n-app.vercel.app"/>
       </bt:Urls>
       <bt:ShortStrings>

@@ -23,6 +23,13 @@ function App() {
   // Webhook URL - replace with your actual n8n webhook URL
   const WEBHOOK_URL = "https://akcoe.app.n8n.cloud/webhook/e9062aec-0393-490e-81de-c6351e41c749"
 
+  // Format message text - convert markdown to HTML
+  const formatMessage = (text: string) => {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convert **text** to bold
+      .replace(/\n/g, '<br>'); // Convert line breaks to <br>
+  }
+
   // Auto-scroll to bottom when new messages arrive
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -158,7 +165,17 @@ function App() {
                   : 'bg-white text-gray-800 border border-gray-200 rounded-bl-sm'
               }`}
             >
-              <p className="text-sm whitespace-pre-wrap break-words overflow-wrap-anywhere message-text">{message.text}</p>
+              {/* Render message with HTML formatting for bot messages */}
+              {message.sender === 'bot' ? (
+                <p 
+                  className="text-sm whitespace-pre-wrap break-words overflow-wrap-anywhere message-text"
+                  dangerouslySetInnerHTML={{ __html: formatMessage(message.text) }}
+                />
+              ) : (
+                <p className="text-sm whitespace-pre-wrap break-words overflow-wrap-anywhere message-text">
+                  {message.text}
+                </p>
+              )}
               <p
                 className={`text-xs mt-1 ${
                   message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'
